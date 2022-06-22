@@ -43,7 +43,7 @@ namespace Proyecto.Controllers
         [HttpPost]
         public JsonResult Guardar(PERSONAS oPersona) {
 
-            bool respuesta = true;
+            bool resp = true;
             try
             {
 
@@ -73,17 +73,17 @@ namespace Proyecto.Controllers
                 }
             }
             catch {
-                respuesta = false;
+                resp = false;
 
             }
 
-            return Json(new { resultado = respuesta }, JsonRequestBehavior.AllowGet);
+            return Json(new { resultado = resp }, JsonRequestBehavior.AllowGet);
 
         }
 
         public JsonResult Eliminar(int idpersona)
         {
-            bool respuesta = true;
+            bool resp = true;
             try
             {
                 using (DBPRUEBASEntities db = new DBPRUEBASEntities())
@@ -98,12 +98,12 @@ namespace Proyecto.Controllers
                 }
             }
             catch {
-                respuesta = false;
+                resp = false;
             }
 
             
 
-            return Json(new { resultado = respuesta }, JsonRequestBehavior.AllowGet);
+            return Json(new { resultado = resp }, JsonRequestBehavior.AllowGet);
         }
 
 
